@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objetos em JavaScript</title>
+    <link rel="stylesheet" href="formata.css">
+</head>
+<body>
+    <header><h1>Objetos em JavaScript</h1></header>
+    <nav>
+        <button onclick="aluno.fala()">Fala</button>
+        <button onclick="verObjeto()">Ver Objeto</button>
+        <button onclick="corrigeobjeto()">Corrigir objeto</button>
+       
+    </nav>
+    <main>
+
+
+        <script>
+            //Metodo é uma função pq ele vai fazer alguma coisa por isso o fala tem o function
+            const paluno = {nome: "Vlad", doc: "12345",
+             turma: "5° serie", fala:function(){alert("Bla bla bla")}};
+             console.log(aluno);
+
+
+//var é de variavel. ver Variavel local que eu criei para receber o dado. \n é quebra de linha dentro do JavaScript
+            function verObjeto(){
+                var ver = prompt("Qual dado do objeto deseja ver:\n Digite 1 para ver o nome \n Digite 1 para ver o Nome \n Digite 2 para ver o Documento \n Digite 3 para ver o Turma \n Digite 4 para ver o nome Todos os Dados");
+                if(ve == "1"){
+                alert(aluno.nome);
+                }
+                if(ve == "2"){
+                    alert(aluno.doc);
+                }
+                if(ve == "3"){
+                    alert(aluno.turma);
+                 }
+                if(ve == "4"){
+                 alert("/Nome:"+aluno.nome+"\nDocumento: "+aluno.doc+"\nTurma: "+aluno.turma);
+                 }
+            }
+
+
+            function corrigeobjeto(){
+                var ver = prompt("Qual dado do objeto deseja corrigir:\n Digite 1 para ver o nome \n Digite 1 para ver o Nome \n Digite 2 para ver o Documento \n Digite 3 para ver o Turma");
+                var valor = prompt("Qual o novo valor do dado"); 
+                if(ve == "1"){
+                    aluno.nome = va;
+                }
+                if(ve == "2"){
+                    aluno.doc = va
+                }
+                if(ve == "3"){
+                    aluno.turma = va;
+                 }
+               
+            }
+
+            
+
+            
+        </script>
+
+
+    </main>
+    <footer><h1>Programação WEB III - Professor James Willian - 2024</h1></footer>
+</body>
+</html>

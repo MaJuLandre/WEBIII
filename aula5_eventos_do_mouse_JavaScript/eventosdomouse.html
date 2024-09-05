@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="formata.css">
+    <title>Eventos do mouse</title>
+
+
+    <style>
+        table,tr,td,th{
+            border: solid 1px black;
+            border-collapse: collapse;
+            
+        }
+        table{
+            width: 50%;
+        }
+        td,th{
+            width: 30%;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header><h1>Eventos do mouse</h1></header>
+    <nav>
+
+                            
+    </nav>
+    <main>
+        
+            <table>
+                <tr><th colspan="3">Eventos</th></tr>
+                <tr>
+                    <td>onclick</td><td>click simples</td><td><button onclick="umClick()">Um click</button></td></tr>
+                </tr>
+                <tr>
+                    <td>ondblclick</td><td>click duplo</td><td><button ondblclick="duploClick()">Escuro</button><button ondblclick="claro()">Claro</button></td></tr>
+                </tr>
+                <tr id="verde" onmouseover="verd()" onmouseout="azulm()">
+                    <td> onmouseover</td><td>mouse está sobre o elemento</td><td >verde</td>
+
+                </tr>
+                <tr id="azulma" onmouseover="verd()" onmouseout="azulm()" onmouseout="verd">
+                    <td>onmouseout</td><td >mouse sai do elemento</td><td>azul marinho</td>
+                </tr>
+                <tr>
+                    <td>onmousemove</td><td>mouse se movimento no elemento </td><td>22</td>
+                </tr>
+                <tr>
+                    <td>onmousedown</td><td>mouse clicando</td><td class="lara">29</td>
+                </tr>
+                <tr>
+                    <td>onmousedoup</td><td>mouse solto</td><td class="ver">22</td>
+                </tr>
+                
+                
+
+            </table>
+       
+    </main>
+
+    <footer><h1>Programação WEBIII - 2024 - Prof James Willian</h1></footer>
+
+    <script>
+
+        function umClick(){
+            alert("Um cllick");
+        }
+
+        function duploClick(){
+            document.body.style.backgroundColor="black";
+            document.body.style.color="white";
+        
+        }
+        function claro(){
+            document.body.style.backgroundColor="lightblue";
+            document.body.style.color="black";
+        
+        }
+        function verd(){
+            let div = document.getElementById("verde");
+            div.style.backgroundColor="green";
+
+            let div2 = document.getElementById("azulma");
+            div2.style.backgroundColor="green";
+        }
+
+        function azulm(){
+            let div = document.getElementById("verde");
+            div.style.backgroundColor="blue";
+
+            let div2 = document.getElementById("azulma");
+            div2.style.backgroundColor="blue";
+        }
+    </script>
+
+
+</body>
+</html>

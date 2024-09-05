@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="formata.css">
+    <title>Eventos do Mouse</title>
+
+
+    <style>
+        table,tr,td,th{
+            border: solid 1px black;
+            border-collapse: collapse;
+            
+        }
+        table{
+            width: 50%;
+        }
+        td,th{
+            width: 30%;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header><h1>Eventos do Mouse</h1></header>
+    <nav>
+
+                            
+    </nav>
+    <main>
+        
+            <table id="tb">
+                <tr><td colspan="3">Eventos</td></tr>
+                <tr>
+                    <td>onclick</td><td>click simples</td><td><button onclick="umClick()">Um click</button></td></tr>
+                </tr>
+                <tr>
+                    <td>ondblclick</td><td>click duplo</td><td><button ondblclick="duploClick()">Escuro</button><button ondblclick="claro()">Claro</button></td></tr>
+                </tr>
+                <tr id="verde" onmouseover="verd()" onmouseout="azulm()">
+                    <td> onmouseover</td><td>mouse está sobre o elemento</td><td >verde</td>
+
+                </tr>
+                <tr id="azulma" onmouseover="verd()" onmouseout="azulm()" onmouseout="verd">
+                    <td>onmouseout</td><td >mouse sai do elemento</td><td>azul marinho</td>
+                </tr>
+                <tr>
+                    <td>onmousemove</td><td>mouse se movimento no elemento </td><td id="move" onmousemove="moveu()"></td>
+                </tr>
+                <tr>
+                    <td>onmousedown</td><td>mouse clicando</td><td><button onmousedown="clicando()">Clicando</button></td>
+                </tr>
+                <tr>
+                    <td>onmouseup</td><td>mouse solto</td><td><button onmouseup="solto()">Mouse Solto</button></td>
+                </tr>
+                
+                
+
+            </table>
+       
+    </main>
+
+    <footer><h1>Programação WEBIII - 2024 - Prof James Willian</h1></footer>
+
+    <script>
+
+        function umClick(){
+            alert("Um click");
+        }
+
+        function duploClick(){
+            document.body.style.backgroundColor="black";
+            document.body.style.color="white";
+
+            var celulas = document.querySelectorAll('#tb td');
+            celulas.forEach(function(celula) {
+            celula.style.border = '1px solid white';
+            });
+        
+        }
+        function claro(){
+            document.body.style.backgroundColor="lightblue";
+            document.body.style.color="black";
+
+            var celulas = document.querySelectorAll('#tb td');
+            celulas.forEach(function(celula) {
+            celula.style.border = '1px solid black';
+            });
+
+        
+        }
+
+
+
+
+
+
+        function verd(){
+            let div = document.getElementById("verde");
+            div.style.backgroundColor="lightgreen";
+
+            let div2 = document.getElementById("azulma");
+            div2.style.backgroundColor="lightgreen";
+        }
+
+        function azulm(){
+            let div = document.getElementById("verde");
+            div.style.backgroundColor='';
+
+            let div2 = document.getElementById("azulma");
+            div2.style.backgroundColor='';
+        }
+
+
+
+
+        function clicando(){
+            alert("O mouse foi clicado");
+
+        }
+
+        function solto(){
+            alert("O mouse foi solto");
+        }
+
+
+
+        function moveu(){ //let é uma variavel
+            let m = document.getElementById("move");
+            m.append("moveu "); // append adiciona o texto que eu colocar
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funções em JavaScript</title>
+    <link rel="stylesheet" href="formata.css">
+
+</head>
+<body>
+    <header><h1> Funções em JavaScript</h1></header>
+    <nav>
+        <button onclick="soma()">SOMA</button>
+        <button onclick="sub()">SUBTRAÇÃO</button>
+        <button onclick="mul()">MULTIPLICAÇÃO</button>
+        <button onclick="divi()">DIVISÃO</button>
+    </nav>
+    <main>
+        <h2 id="txt"></h2>
+        <script>
+
+            //var A = 5;
+            //var B = 6;
+            //var A = prompt("Digite um valor");
+            //var B = prompt("Digite um valor");
+            //var A = parseInt(prompt("Digite um valor"));
+            //var B = parseInt(prompt("Digite um valor"));
+        //function soma(A,B){
+        function soma(){
+            //var A = 5;
+           // var B = 6;
+           //var A,B;
+            //var A = parseInt(prompt("Digite um valor"));
+            //var B = parseInt(prompt("Digite um valor"));
+            var A = parseInt(prompt("Digite o 1º valor"));
+            var B = parseInt(prompt("Digite o 2º valor"));
+            A = A + B;
+            
+            alert("A soma foi de " + A);
+        }
+
+        function sub(){
+            
+            var A = parseInt(prompt("Digite o 1º valor"));
+            var B = parseInt(prompt("Digite o 2º valor"));
+            A = A - B;
+            
+            alert("A subtração foi de " + A);
+        }
+
+        function mul(){
+            
+            var A = parseInt(prompt("Digite o 1º valor"));
+            var B = parseInt(prompt("Digite o 2º valor"));
+            A = A * B;
+            
+            alert("A multiplicação foi de " + A);
+        }
+
+        function divi(){
+            
+            var A = parseInt(prompt("Digite o 1º valor"));
+            var B = parseInt(prompt("Digite o 2º valor"));
+            if(B !=0){
+                A = A + B;
+                    alert("O resultado da divisão foi de: " + A);
+            }else{
+                alert("É impossivel dividir por 0");
+            }
+        }
+            
+        
+        //soma(A,B);
+        
+        function prof(){
+            var pro = prompt("Quem é o professor?");
+            return pro; // pro é uma variavel local desta função (executa so dentro da função)
+        }
+        var professor = prof();// professor é uma variavel global (que executa no programa inteiro)
+        document.getElementById("txt").innerHTML = "O professor é " + professor;
+        
+        </script>
+        
+
+
+
+    </main>    
+    <footer> Programação WEB III - Prof James Willian - 2024</footer>
+</body>
+</html>

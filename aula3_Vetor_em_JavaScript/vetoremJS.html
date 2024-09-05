@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vetores em JavaScript</title>
+    <link rel="stylesheet" href="formata.css">
+</head>
+<body>
+    <header><h1>Vetores em JavaScript</h1></header>
+    <nav>
+        <button onclick="verVetor()">ver Vetor</button>
+        <button onclick="verDado()">ver Dado</button>
+        <button onclick="alteraDado()">Altera Dado</button>
+    </nav>
+    <main>
+
+
+        <script>
+            //Exitem 3 jeitos de criar vetor em JavaScript:
+            //Escolha qual você mais gosta de usar e use;
+            const vetor1 = ["James Willian", "Professor"];
+            const vetor2 = new Array("James", "Professor da ETEC");
+            const vetor3 = [];
+            vetor3 [0] = "Willian";
+            vetor3 [1] = "Professor do CPS";
+
+
+            
+
+
+            function verVetor(){
+
+                var a = prompt("Qual vetor você quer ver?");
+                if(a == "vetor1"){
+                    alert(vetor1);
+                }
+                if(a == "vetor2"){
+                    alert(vetor2);
+                }
+                if(a == "vetor3"){
+                    alert(vetor3);
+                }
+                if(a != "vetor1" && a != "vetor2" && a != "vetor3"){
+                    alert("Esse vetor não existe!!!!!!!!!!!");
+                }
+            }
+
+            function verDado(){
+
+                var a = prompt("Qual vetor você quer ver?");
+                var b = parseInt(prompt("Qual dado você quer ver 0 ou 1?"));
+                if(a == "vetor1"){
+                    if(b == 0){}
+                    alert(vetor1[0]);
+                }
+                if(a == "vetor1"){
+                    if(b == 1){}
+                    alert(vetor1[1]);
+                }
+                if(b > 1){
+                alert(verto1[b]);
+                }
+                }
+
+
+                if(a == "vetor2"){
+                    if(b == 0){}
+                    alert(vetor2[0]);
+                }
+                if(a == "vetor2"){
+                    if(b == 1){}
+                    alert(vetor2[1]);
+                }
+                if(b > 1){
+                alert(verto2[b]);
+                }
+                }
+
+                if(a == "vetor3"){
+                    if(b == 0){}
+                    alert(vetor3[0]);
+                }
+                if(a == "vetor3"){
+                    if(b == 1){}
+                    alert(vetor3[1]);
+                }
+                if(b > 1){
+                alert(verto3[b]);
+                }
+            }
+            
+
+
+
+            function alteraDado(){
+
+                var a = prompt("Qual vetor você quer ver?");
+                var b = parseInt(prompt("Qual dado você quer ver 0 ou 1?");
+                var c = prompt("Qual o novo valor do dado?");
+                if(a == "vetor1"){
+                    if(b == 0){
+                    vetor1[0] = c;
+                    }
+                    if(b == 1){
+                    vetor1[1] = c;
+                    }
+                    if(b > 1){
+                        vetor1[b] = c;
+                    }
+                    
+                }
+
+
+                if(a == "vetor2"){
+                    if(b == 0){
+                    vetor2[0] = c;
+                    }
+                    if(b == 1){
+                    vetor2[1] = c;
+                }
+                if(b > 1){
+                        vetor2[b] = c;
+                    }
+                }
+
+                if(a == "vetor3"){
+                    if(b == 0){
+                    vetor3[0] = c;
+                    }
+                    if(b == 1){
+                    vetor3[1] = c;
+                }
+                if(b > 1){
+                        vetor3[b] = c;
+                    }
+                }
+
+                if(a != "vetor1" && a != "vetor2" && a != "vetor3"){
+                    alert("Este vetor não existe! <br> Novo valor não foi gravado!");
+                }
+                }
+
+                
+             
+        
+        </script>
+
+
+    </main>
+    <footer><h1>Programação WEB III - Professor James Willian - 2024</h1></footer>
+</body>
+</html>

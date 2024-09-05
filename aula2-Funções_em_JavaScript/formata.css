@@ -1,0 +1,44 @@
+body{
+    background-color: lightblue;
+    text-align: center;
+}
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 10%;
+    width: 100%;
+}
+nav{
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    height: 10%;
+    width: 100%;
+}
+main{
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    height: 70%;
+    width: 100%;
+}
+footer{
+    position: fixed;
+    top: 90%;
+    left: 0%;
+    height: 10%;
+    width: 100%;
+}
+.verd{
+    color: green;
+    font-size: 200%;
+}
+.verm{
+    color: red;
+    font-size: 150%;
+}
+.azul{
+    color: blue;
+    font-size: 150%;
+}

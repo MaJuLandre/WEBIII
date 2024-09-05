@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="formata.css">
+    <title>MOTRICIDADE</title>
+    <style>
+        table, tr, td, th {
+            border: solid 1px black;
+            border-collapse: collapse;
+            
+            
+        }
+        
+            
+        
+        td, th {
+            width: 40px;
+            height: 40px; /* Ajuste a altura das células se necessário */
+            text-align: center;
+            vertical-align: center;
+            overflow: auto;
+        }
+        
+        #overlay {
+            display: none; /* Inicialmente oculto */
+            position: fixed; /* Fica fixo na tela */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Largura da tela */
+            height: 100vh; /* Altura da tela */
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center; /* Centraliza o conteúdo */
+            z-index: 100px; /* Coloca sobre outros conteúdos */
+        }
+        #overlay img {
+            min-width: 100%; /* Ajusta a largura da imagem */
+            min-height: 100%; /* Ajusta a altura da imagem */
+        }
+        #layover {
+            display: none; /* Inicialmente oculto */
+            position: fixed; /* Fica fixo na tela */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Largura da tela */
+            height: 100vh; /* Altura da tela */
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center; /* Centraliza o conteúdo */
+            z-index: 100px; /* Coloca sobre outros conteúdos */
+        }
+        #layover img {
+            min-width: 40%; /* Ajusta a largura da imagem */
+            min-height: 40%; /* Ajusta a altura da imagem */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TESTANDO MOTRICIDADE</h1>
+        <h2>Objetivo mover o seu cursor até o quadrado preto</h2>
+    
+    </header>
+    <nav></nav>
+    <main>
+        <table>
+            <tr>
+                <td>Q</td><td></td><td></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td>
+            </tr>
+            <tr >
+                <td></td> <td></td><td></td><td></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                
+            </tr>
+
+
+
+
+            <tr>
+                <td></td><td></td><td></td><td></td>
+                <td class="move" onmousemove="Imageshow()">Q</td><td></td><td></td><td></td><td></td>
+                
+            </tr>
+
+
+
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" style="background-color: black; color: black;" onmousemove="showImage()"></td>
+                
+            </tr>
+            <tr>
+                <td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td><td class="move" onmousemove="showImage()"></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                
+            </tr>
+            
+            
+        </table>
+    </main>
+    <footer><h1>Programação WEB III - 2024 - Aluna Maju</h1></footer>
+
+    <!-- Overlay para exibir a imagem em tela cheia -->
+    <div id="overlay" ><img src="morreu.png" alt="Imagem de morre"></div>
+    <div id="layover" ><img src="haha.jpg" alt="Imagem de vivo"></div>
+    
+
+    <script>
+        function showImage() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+        function Imageshow() {
+            document.getElementById('layover').style.display = 'flex';
+        }
+        
+
+        
+    </script>
+</body>
+</html>

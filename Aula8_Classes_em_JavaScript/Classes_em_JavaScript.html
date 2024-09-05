@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formata.css">
+    <title>Classes em JavaScript</title>
+</head>
+<body>
+    <header><h1>Classes em JavaScript</h1></header>
+    <nav>
+        <button onclick="ver()">Ver Objeto</button>
+        <button onclick="cad()">Cadastrar Objeto</button>
+    
+    </nav>
+    
+    <main>
+    </main>
+    <footer><h1>Programação WEB III - Prof James William - 2024</h1></footer>
+    <script>
+        class Aluno{
+            construtor(v1, v2, v3){
+                this.mat = v1;
+                this.nome = v2;
+                this.nota = v3;
+             }
+        }
+        if{
+        const aluno0 = new Aluno("0", "nome do aluno", "0");
+        //console.log(aluno0);
+        aluno0.nome = "Isabela";
+        }
+        else{
+
+        function ver(){
+            
+            alert("Matrícula: "+aluno0.mat+"\n Nome: "+aluno0.nome+"\n Nota: "+aluno0.nota);
+        }
+        }
+        
+        function cad(){
+            
+            var a = prompt("Qual a matrícula do aluno?");
+            aluno0.mat = a;
+            var b = prompt("Qual o nome do aluno?");
+            aluno0.nome = b;
+            var c = prompt("Qual a nota do aluno?");
+            aluno0.nota = c;
+        }
+        
+
+
+    </script>
+</body>
+</html>
