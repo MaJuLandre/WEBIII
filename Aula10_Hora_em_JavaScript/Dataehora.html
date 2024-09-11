@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formata.css">
+    <title>Data e Hora</title>
+</head>
+
+<body>
+    <header>
+        <h1>Data e Hora em JavaScript</h1>
+    </header>
+
+    <nav>
+        <button onclick="verdata()">Ver data formato US</button>
+        <button onclick="datacurta()"> Data Curta</button>
+        <button onclick="datalonga()"> Data Longa</button>
+        <button onclick="datahorabr()"> Data e Hora BR</button>
+        <button onclick="databr()"> Data formato BR</button>
+        <button onclick="horabr()"> Hora BR</button>
+        <button onclick="hmsms()"> hmsms</button>
+        <button onclick="intervalo()"> Intervalo</button>
+
+
+
+    </nav>
+
+    <main>
+        <h1 id="mostra"></h1>
+
+    </main>
+    <footer>
+        <h1>Programação WEB III - 2024 - Prof James Willian</h1>
+    </footer>
+    <script>
+
+
+        function verdata() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            document.getElementById("mostra").innerHTML = data;
+        }
+
+        function datacurta() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let dia = data.getDate();
+            let mes = data.getMonth();// carrega do 0 ao 11 o 0 sendo janeiro
+            mes = mes + 1;
+            function addZero(n) {
+                return n < 10 ? "0" + n : "" + n; // esse é como se fosse o if e o else
+            }
+            let ano = data.getFullYear();
+            document.getElementById("mostra").innerHTML = addZero(dia) + "/" + addZero(mes) + "/" + ano;
+        }
+
+        function datalonga(){
+            let data = new Date();
+            const mesTexto = ["Janeiro", "Fevereiro","Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            let mestx = mesTexto[data.getMonth()];
+            const semanaTexto = ["Domingo", "Segunda-feira","Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            let setx = semanaTexto[data.getDay()];
+            let dia = data.getDate();
+            let ano = data.getFullYear();
+            document.getElementById("mostra").innerHTML = "Hoje é " +setx+", dia" +dia+" de "+mestx+" de "+ano+".";
+        }
+
+        function datahorabr() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let dataBr = data.toLocaleString("pt-BR");
+            document.getElementById("mostra").innerHTML = dataBr;
+        }
+
+        function databr() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let dataBr = data.toLocaleString("pt-BR",{dateStyle:"short"});
+            document.getElementById("mostra").innerHTML = dataBr;
+        }
+
+        function horabr() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let horaBr = data.toLocaleString("pt-BR",{timeStyle:"short"});
+            document.getElementById("mostra").innerHTML = horaBr;
+        }
+
+        function hmsms() {
+            let data = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let hora = data.getHours();
+            let minu = data.getMinutes();
+            let segu = data.getSeconds();
+            let mile = data.getUTCMilliseconds();
+            document.getElementById("mostra").innerHTML = hora+":"+minu+":"+segu+":"+mile;
+        }
+
+        function intervalo() {
+            let hoje = new Date();//let define uma variavel assim quando ele chama o Date irá criar a data baseada no sistema ANO, MES e DIA
+            let dia = parseInt(prompt('Digite o dia!'));
+            let mes = parseInt(prompt('Digite o mês!'));  
+            mes = mes + 1; 
+            let ano = parseInt(prompt('Digite o ano!')); 
+            let datap = new Date(ano,mes,dia);
+            let ddata = hoje - datap;
+            let ddias = Math.ceil(ddata / (1000*60*60*24));
+            alert(ddias);      
+
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
