@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formata.css">
+    <title>Data e Hora</title>
+</head>
+
+<body>
+    <header>
+        <h1>Data e Hora em JavaScript</h1>
+    </header>
+
+    <nav>
+        <button onclick="verdata()">Ver data formato US</button>
+        <button onclick="datacurta()"> Data Curta</button>
+        <button onclick="datalonga()"> Data Longa</button>
+        
+
+
+
+    </nav>
+
+    <main>
+        <h1 id="mostra"></h1>
+
+    </main>
+    <footer>
+        <h1>Programação WEB III - 2024 - Prof James Willian</h1>
+    </footer>
+    <script>
+
+
+        function verdata() {
+            let data = new Date();//let é uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            document.getElementById("mostra").innerHTML = data;
+        }
+
+        function datacurta() {
+            let data = new Date();//let é uma variavel assim quando ele chama o Date irá criar a data baseada no sistema 
+            let dia = data.getDate();
+            let mes = data.getMonth();// carrega do 0 ao 11 o 0 sendo janeiro
+            mes = mes + 1;
+            function addZero(n) {
+                return n < 10 ? "0" + n : "" + n; // esse é como se fosse o if e o else
+            }
+            let ano = data.getFullYear();
+            document.getElementById("mostra").innerHTML = addZero(dia) + "/" + addZero(mes) + "/" + ano;
+        }
+
+        function datalonga(){
+            let data = new Date();
+            const mesTexto = ["Janeiro", "Fevereiro","Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            let mestx = mesTexto[data.getMonth()];
+            let dia = data.getDate();
+            let ano = data.getFullYear();
+            document.getElementById("mostra").innerHTML = "Hoje é dia " +dia+" de "+mestx+" de "+ano;
+        }
+
+    </script>
+</body>
+
+</html>
