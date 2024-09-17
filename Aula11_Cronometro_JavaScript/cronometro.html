@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <link rel="stylesheet" href="formata.css">
+    <style>
+        .crono {
+            border: black solid 2px;
+            width: 35%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cronômetro</h1>
+    </header>
+    <nav></nav>
+    <main>
+        <h1>
+            <span id="horas"></span> :
+            <span id="minutos"></span> :
+            <span id="segundos"></span>
+        </h1>
+        <div class="crono">
+            <h1>Cronômetro JS</h1>
+            <h2 id="timer">00:00:00:00</h2>
+            <div id="action">
+                <button id="reset">REINICIA</button>
+                <button id="power" action="start">
+                    INÍCIO/CONTINUA
+                </button>
+                <button id="mark"> MOSTRA TEMPO</button>
+            </div>
+            <div id="marks-list"></div>
+
+    </main>
+    <footer>
+        <h1>Programação WEB III - 2024 - Prof. James Willian</h1>
+    </footer>
+    <script>
+        const horas = document.getElementById('horas');
+        const minutos = document.getElementById('minutos');
+        const segundos = document.getElementById('segundos');
+
+        const relogio = setInterval(function time() {
+            let data = new Date();
+            let hr = data.getHours();
+            let min = data.getMinutes();
+            let seg = data.getSeconds();
+
+            if (hr < 10) { hr = '0' + hr }
+            if (min < 10) { min = '0' + min }
+            if (seg < 10) { seg = '0' + seg }
+
+            horas.textContent = hr;
+            minutos.textContent = min;
+            segundos.textContent = seg;
+        });
+        // aqui começa o cronômetro
+
+        const timerEI = document.getElementById('timer');
+        const marksList = document.getElementById('marks-list');
+        let intervalId = 0;
+        let timer = 0;
+        let marks = [];
+
+        const formatTime = (time) => {
+            const hours = Math.floor(time / 360000);
+            const minutes = Math.floor((time % 360000) / 6000);
+            const seconds = Math.floor((time % 6000) / 100);
+            const hundredths = time % 100; //sentesimos de segundo
+
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${hundredths.toString().padStart(2, '0')}`;
+            }
+
+            const setTimer = (time) =>{
+                timerEI.innerText = formatTime(time);}
+            const addMarkToList = (markIndex, markTime) =>{
+                marksList.innerHTML += `<p>Marca ${markIndex}: ${formatTime(markTime)}</p>`;}
+
+                const toggleTimer = () =>{
+                const button = document.getElementById('power');
+                const action = button.getAttribute('action');
+
+                clearInterval(intervalId);
+                if(action == 'start' ||action == 'continue'){
+                    intervalId = setInterval(() =>{
+                        timer +=1;
+                        setTimer(timer);
+                    },10);
+                    button.setAttribute('action', 'pause');
+                    button.innerHTML='PARA';
+                    }else if(action == 'pause'){
+                        button.setAttribute('action', 'continue');
+                        button.innerHTML= 'INÍCIO/CONTINUA';
+                }
+        }
+        const markTime = () =>{
+            marks.push(timer);
+            addMarkToList(marks.length, timer);
+        }
+
+
+
+
+        const resetTimer = () =>{
+            clearInterval(intervalId);
+            timer = 0;
+            marks = [];
+            setTimer(timer);
+            marksList.innerHTML ='';
+            const button = document.getElementById('power');
+            button.setAttribute('action', 'start');
+            button.innerHTML = 'INÍCIO/CONTINUA';
+        }
+
+
+
+        document.getElementById('power').addEventListener('click', toggleTimer);
+        document.getElementById('mark').addEventListener('click', markTime);
+        document.getElementById('reset').addEventListener('click', resetTimer);
+    </script>
+</body>
+
+</html>
